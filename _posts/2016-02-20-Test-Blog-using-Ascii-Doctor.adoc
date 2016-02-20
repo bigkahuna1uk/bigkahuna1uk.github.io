@@ -1,0 +1,5 @@
+= Test Blog using AsciiDoctor
+
+:uri-google: http://www.google.co.uk
+
+Example of link  {uri-google}[google]
