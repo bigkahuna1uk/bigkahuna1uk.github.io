@@ -1,0 +1,11 @@
+= Clojure X 2015
+
+https://skillsmatter.com/conferences/6861-clojure-exchange-2015[Clojure exChange 2015] has just finished and I must say that I thoroughly enjoyed it. The feature packed two days of the conference has passed by in a blur.  I've been to other IT conferences before but this was my first one entirely devoted to Clojure.  It was a great forum to meet kindred spirits as well as the added bonus of meeting some of the authors of open-sourced Clojure projects.
+
+image::clojure-x/duct.jpg[]
+
+
+It was also gratifying that as well as the comprehensive and growing Clojure ecosystem, one could witness also the large number of real world applications written in Clojure. This is a testament to Clojure's burgeoning maturity as a programming language.
+
+I'm pleased to announce the majority of talks are already available on Skillsmatter's website.
+https://skillsmatter.com/conferences/6861-clojure-exchange-2015#skillscasts
