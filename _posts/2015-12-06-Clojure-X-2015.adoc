@@ -1,0 +1,31 @@
+= Clojure X 2015
+:published_at: 2015-12-06
+:hp-tags: Clojure, Functional Programming
+
+https://skillsmatter.com/conferences/6861-clojure-exchange-2015[Clojure exChange 2015] has just finished and I must say that I thoroughly enjoyed it. The feature packed two days of the conference has passed by in a blur.  I've been to other IT conferences before but this was my first one entirely devoted to Clojure.  It was a great forum to meet kindred spirits as well as the added bonus of meeting some of the authors of open-source Clojure projects.
+
+image::clojure-x/duct.jpg[]
+
+
+It was also gratifying that as well as the comprehensive and growing Clojure ecosystem, one could witness also the large number of real world applications written in Clojure. This is a testament to Clojure's burgeoning maturity as a programming language.
+
+I'm pleased to announce the majority of talks are already available on Skillsmatter's website.
+https://skillsmatter.com/conferences/6861-clojure-exchange-2015#skillscasts
+
+All of the talks were excellent. My particular favourites were Bozhidar Batsov talk on https://skillsmatter.com/skillscasts/7225-cider-the-journey-so-far-and-the-road-ahead[Cider]. He's one of the authors of Cider and gave a informative but also very humurous talk on the some of the new features of Cider as an Emacs editor for Clojure. I've never used Emacs in anger but I'm encouraged to try and learn because of Bodzhidar's enthusiam. 
+
+I was also impressed by J. Pablo Fernández talk on https://skillsmatter.com/skillscasts/7245-what-is-a-macro[What is a Macro?]. This highlighted one of Clojure's core strengths as it showed how easy it was to add new language features by the use of macros. He demonstrated it by an example of using Junit assertions. Typically in a OO language such as Java if you need to add assertions for new types it results in numerous overloaded methods which in essence are fundamentally doing the same thing. J. Pablo showed how this could be achieved by a single macro. The behaviour is captured in one place but the use can be used by several types. This showed the inherent power of macros. Something for me to investigate further.   
+
+
+Malcolm Sparks presentation on https://github.com/juxt/yada[Yada] was also very interesting. This is a https://skillsmatter.com/skillscasts/7224-rest-full-web-service-in-clojure-two-different-approaches[Restful Web Service API for Clojure] 
+Having used predominately Java frameworks, I was impressed by the succinctness of the API, where most of the plumbing or infrastructure code is hidden so one can concentrate on solving the busienss problem at hand.  
+
+I'm not a front-end developer but I was still intrigued by Kris Jenkins presentation on using https://skillsmatter.com/skillscasts/7227-clojurescript-architecting-for-scale[ClojureScript: Architecting for Scale]. Kris showed how to forgo the use of MVC pattern and how to write sinple page applications so incidental complexity is kept as a minimum. This is something to adopt no matter what type of programming you do. The pattern he described as been released as new library https://github.com/krisajenkins/petrol[Petrol] in which the use of reactive patterns becomes paramount
+
+
+
+
+
+Looking forward to Clojure 2016 already.
+
+Thanks to https://www.linkedin.com/in/chrishowejones[Chris Howe-Jones] for organizing a great event.
