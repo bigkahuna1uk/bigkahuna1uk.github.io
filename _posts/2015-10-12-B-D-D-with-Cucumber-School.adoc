@@ -10,3 +10,10 @@ I was fortunate to be asked to peer review a set of online training videos from 
 I was gratified to see that the initial lesson were geared towards fleshing out behaviour via conversations or examples rather than diving straight into the tool. This is achieved by the need for distinct user roles in defining and refining those examples.
 
 image::cucumber-school/1-vlcsnap-three-amigos.png[]
+
+
+A team is usually built of different disciplines such as developers, testers and a business representative such as a http://scrummethodology.com/scrum-product-owner/[product owner]. What was hammered home during the lessons was the need for continual collaboration  and communication between all team members so that the specifications constructed were effective and garnered common understanding.
+
+An exploration of the https://github.com/cucumber/cucumber/wiki/Gherkin[Gherkin syntax] was covered. https://github.com/cucumber/cucumber/wiki/Gherkin[Gherkin] is a business readable https://en.wikipedia.org/wiki/Domain-specific_language[DSL] that describes the behaviour of your software without detailing its implementation. You can think of this as a form of standardization in how your scenarios should be constructed. Cucumber School gave an excellent explanation on Gherkin and how to tailor scenarios effectively.
+
+image::cucumber-school/2-vlcsnap-2015-10-gherkin.png[role=left]
