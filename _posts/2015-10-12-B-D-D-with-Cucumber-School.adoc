@@ -53,12 +53,12 @@ As I proceeded through the lessons, any questions I had on BDD on testing or the
 
 A lot of people still think BDD is a tool and is only about testing. For a long time, I was one of those people too. I believe BDD is still poorly understood and frequently misappropriated. But following the Cucumber School lessons, I think a lot of the misnomers of BDD will be eradicated. At the end of the course I feel I've gained several approaches to finding solutions to problems in new ways.
 
-=====Conclusion
+===== Conclusion
 
 So in conclusion,
-* The videos and related exercises are excellent in describing the benefits of developing software following a BDD approach
-* I liked that the modus operandi was to adopt a reactive approach rather than trying to get everything correct the first time round.  Recognizing shortcomings in scenarios or code and test smells led to feedback loops in which those were corrected later on. I think this was a great point to take away and remember.
-* I liked how BDD was presented as complimentary to other practices or development techniques such as TDD or DDD. 
-* The lessons are very good for newcomers but experienced practitioners will also find useful information. I've certainly learnt some practices I wasn't aware of, which I'll carry into my daily work. The series of lessons from Cucumber School come highly recommended.
+ * The videos and related exercises are excellent in describing the benefits of developing software following a BDD approach
+ * I liked that the modus operandi was to adopt a reactive approach rather than trying to get everything correct the first time round.  Recognizing shortcomings in scenarios or code and test smells led to feedback loops in which those were corrected later on. I think this was a great point to take away and remember.
+ * I liked how BDD was presented as complimentary to other practices or development techniques such as TDD or DDD. 
+ * The lessons are very good for newcomers but experienced practitioners will also find useful information. I've certainly learnt some practices I wasn't aware of, which I'll carry into my daily work. The series of lessons from Cucumber School come highly recommended.
 
 
