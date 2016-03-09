@@ -1,0 +1,28 @@
+= Peak Java?
+:published_at: 2011-10-112
+:hp-tags: Programming, Java, JVM, Polyglot
+
+Has Java peaked? To me the Java 7 release feels like it did when Java 3 came out; some gravy no meat. It's not a ground breaker as the evolution from Java 1.1 to 1.2 or when Java 5 was released. Sure there has been some nice language improvements but for me, Java as a language has pretty much stabilised. These new syntactical changes are just glossing over pain points for which they are ample (although sometimes arduous) workarounds.
+
+
+The big changes I see in the future in Java 8 are the Java Module System (JSR 277) and Closures (JSR 335). The latter is needed to make Fork/Join more useable. Closures may have made a bigger impact a few years ago, but now with a plethora of other JVM languages, I feel this will no longer be the case.
+
+
+What's becoming increasingly apparent is the increasing importance of  Java platform. The important thing is not the Java language itself but the JVM.  This acts as a substrate for different languages. Although from above the languages may seem different, it ensures that underneath the covers the the behaviour is consistent.
+
+
+Some examples of JVM languages which have gained traction over the last few years are:
+
+* http://www.scala-lang.org/[Scala]
+
+* http://www.groovy-lang.org/[Groovy] and its statically typed cousin Groovy++ (A great article outlining it's usefulness http://groovy.dzone.com/articles/sneak-peak-groovy-what-it-why)
+* https://clojure.org/[Clojure]
+* http://jruby.org/[JRuby]
+
+And we have some new kids on the block:
+
+* http://ceylon-lang.org/[Ceylon], Red Hat's Java competitor
+* https://en.wikipedia.org/wiki/Quark_Framework[CAL], a Haskell-inspired functional programming language.
+* https://gosu-lang.github.io/[Gosu] (programming language), an extensible type-system language compiled to Java bytecode.
+
+Maybe Java has reached its peak. It's certainly looks like it reached its plateau. I'm looking forward to using Java 7 and 8, but for the JVM improvements only. The platform matters more than the language now.
