@@ -1,6 +1,6 @@
 = The Rationale for Testing
 :published_at: 2011-05-17
-:hp-tags: Unit test, TDD, Mocking
+:hp-tags: Unit test, TDD, Mocking, Testing, Integration
 
 
 
@@ -8,19 +8,18 @@
 Recently I've been thinking why we should test. Too often testing is simply seen as a tick-box exercise, something to be done just to get meet some meaningless metric. 
 
 
-Unit tests is ostensibly is about proving that your implementation behaves as expected. But equally important is the feedback it should be giving you on your design choices. 
+Unit tests are used ostensibly to prove that your implementation behaves as expected. But equally important is the feedback it should be giving you on your design choices. 
 
 
-I like to folow this mantra on what code and tests are telling me either when starting with the test itself when following TDD or trying to write test for legacy code: 
+I like to follow this mantra on what code and tests are telling me either when starting with the test itself when following TDD or trying to write test for legacy code: 
 
-TIP: __If it’s hard to read… it’s hard to test.__ +
-__If it’s hard to test… it’s hard to use.__ +
-__If it’s hard to test… you’re probably doing it wrong.__ +
-__If it’s hard to test… take a look at the design and test it again !__ +
+TIP: __If it’s hard to read, it’s hard to test.__ +
+__If it’s hard to test, it’s hard to use.__ +
+__If it’s hard to test, you’re probably doing it wrong.__ +
+__If it’s hard to test, take a look at the design and test it again !__ +
 
 
-I've seen so called unit tests which hundreds of lines of scaffolding to set up mocks or expectations. That is a big indication that something is wrong with the test and also that the design is incorrect. 
-
+I've seen so called unit tests which hundreds of lines of scaffolding to set up mocks or expectations or the number of collaborators a unit has to use is baffling. That is a big indication that something is wrong with the test and also that the design is incorrect. 
 
 
 So when devising a unit test we should keep in mind that:
@@ -31,14 +30,14 @@ So when devising a unit test we should keep in mind that:
 * The test should be easily understood and maintainable.
 
 
-With that in mind, the following goals should be brought in mind: 
+With that in mind, the following goals should be borne in mind: 
 
 * Tests are thorough and express behaviour not methods. A unit test provides a strict, written contract that the piece of code must satisfy. 
 
 * Tests enables shorter feedback development cycles, enabling finding of problems early in the development cycle.
 * Tests are repeatable. All unit tests should be able to be run repeatedly and continue to produce the same results, regardless of the environment in which the tests are being run.
 * Tests should have a clear intent so they're easily understood. 
-* Tests should be kept up-to-date to reflect the current behaviour of the unit.  
+* Tests should be kept up-to-date to reflect the current behaviour of the unit.  
 * Tests are kept clean for easy maintainability. We should take the same care we take with test code as we do for production code. 
 
 
@@ -46,14 +45,13 @@ With that in mind, the following goals should be brought in mind: 
 Finally unit tests add value both implicitly and explicitly:
 
 * A set of unit tests acts as a regression test suite.
-
 * Production code is documented through test code. Want to know what the software does, read the tests!
-
 * Simplifies integration. Unit testing helps to eliminate uncertainty in the units themselves and can be used in a bottom-up testing style approach. By testing the parts of a program first and then testing the sum of its parts, integration testing becomes much easier.
-
 * It forces developers to think more about their code.
 * It improves the design of the code: you have to make your code testable, so you’ll make sure to separate concerns better.
 * It enables refactoring. Tests become a bedrock to inform you if changes have broken functionality.
 
 
+
+Hopefully these thoughts will get you in the right mindset when writing your own tests. 
  
