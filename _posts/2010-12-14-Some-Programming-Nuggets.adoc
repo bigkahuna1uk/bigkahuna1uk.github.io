@@ -1,0 +1,9 @@
+= Some Programming Nuggets
+:published_at: 2010-12-14
+:hp-tags: Programming, Functional, Tips
+
+I recently came across this list of nuggets that new programmers should learn and veterans have learned the hard way :). 
+
+Check out the link:
+
+http://www.javacodegeeks.com/2010/12/things-every-programmer-should-know.html[Things every programmer should know]
