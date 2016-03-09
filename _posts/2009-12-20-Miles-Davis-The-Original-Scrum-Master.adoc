@@ -1,0 +1,20 @@
+= Miles Davis The Original ScrumMaster?
+:published_at: 2009-12-20
+:hp-tags: Agile, Scrum, Feedback loops, Emergent design
+
+
+
+
+2009 was the 50th birthday of Miles Davis' Kind of Blue, a Jazz classic, indeed a classic for music of any time.
+
+Listening to Kind of Blue again, got me thinking. Those recording sessions embodied everything good that should be part of Scrum or indeed any Agile process.
+
+* **Communication** - Musicians tend to be a synergistic bunch anyway especially Jazz musicians. . If you get a chance to watch a Jazz group in action, forget the music. Watch how they communicate. They're constantly listening or watching each other to guide them forward.
+
+* **Empower the team** - Although Miles lead the group, he didn't tell everyone exactly what to do but let the group (or team) get on with it. He trusted them. In fact most of the tunes weren't written out specifically. A few modal scales were written out and it was left to group to improvise.
+
+* **Give value early** - Most of the tracks on Kind of Blue were first or second takes. If that's not giving value early, I don't know what is.
+
+* **Learn and improve.** - It was interesting listening to the out-takes of the recording session. All players were responding to each other to improve each other's playing. A notable example is the recording of 'So What'. In one of the takes, the recording is stopped early because Miles did not like the beginning. When you hear the accepted take, you'll agree that pick was the correct choice.
+
+Each of these players changed music in so many different ways during the next decade, many of them becoming leaders of their own groups. They learnt from this session and changed the course of music forever. It truly was a sum of parts is greater than the whole :D.
