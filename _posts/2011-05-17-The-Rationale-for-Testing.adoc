@@ -26,36 +26,34 @@ I've seen so called unit tests which hundreds of lines of scaffolding to set up 
 So when devising a unit test we should keep in mind that:
 
  
-
 * The test only tests the unit in question and nothing else
 * The test conveys behaviour of unit as close as possible
 * The test should be easily understood and maintainable.
 
 
- 
-==== Goals
-·        Tests are thorough and express behaviour not methods. A unit test provides a strict, written contract that the piece of code must satisfy. 
-·        Tests enables shorter feedback development cycles, enabling finding of problems early in the development cycle.
-·        Tests are repeatable. All unit tests should be able to be run repeatedly and continue to produce the same results, regardless of the environment in which the tests are being run.
-·        Tests have clear intent so they're easily understood. 
-·        Test should be kept up-to-date to reflect the current behaviour of the unit.  
-·        Tests are kept clean for easy maintainability. 
+With that in mind, the following goals should be brought in mind: 
 
-Unit tests add value
-·        A set of unit tests acts as a regression test suite. 
-·        Production code is documented through test code. Want to know what the software does, read the tests!
-·        Simplifies integration. Unit testing helps to eliminate uncertainty in the units themselves and can be used in a bottom-up testing style approach. By testing the parts of a program first and then testing the sum of its parts, integration testing becomes much easier.
-·        It forces developers to think more about their code.
-·        It improves the design of the code: you have to make your code testable, so you’ll make sure to separate concerns better.
-·        It enables refactoring. Tests become a bedrock to inform you if changes have broken functionality.
+* Tests are thorough and express behaviour not methods. A unit test provides a strict, written contract that the piece of code must satisfy. 
+
+* Tests enables shorter feedback development cycles, enabling finding of problems early in the development cycle.
+* Tests are repeatable. All unit tests should be able to be run repeatedly and continue to produce the same results, regardless of the environment in which the tests are being run.
+* Tests should have a clear intent so they're easily understood. 
+* Tests should be kept up-to-date to reflect the current behaviour of the unit.  
+* Tests are kept clean for easy maintainability. We should take the same care we take with test code as we do for production code. 
 
 
-Rationale 
-·        Test only the unit in question and nothing else
-·        Convey behaviour of unit as close as possible
-·        Test should be easily understood and maintainable. 
-If it’s hard to read… it’s hard to test.
-If it’s hard to test… it’s hard to use.
-If it’s hard to test… you’re probably doing it wrong.
-If it’s hard to test… take a look at the design and test it again !
+
+Finally unit tests add value both implicitly and explicitly:
+
+* A set of unit tests acts as a regression test suite.
+
+* Production code is documented through test code. Want to know what the software does, read the tests!
+
+* Simplifies integration. Unit testing helps to eliminate uncertainty in the units themselves and can be used in a bottom-up testing style approach. By testing the parts of a program first and then testing the sum of its parts, integration testing becomes much easier.
+
+* It forces developers to think more about their code.
+* It improves the design of the code: you have to make your code testable, so you’ll make sure to separate concerns better.
+* It enables refactoring. Tests become a bedrock to inform you if changes have broken functionality.
+
+
  
