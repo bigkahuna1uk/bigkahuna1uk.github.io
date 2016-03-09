@@ -1,0 +1,3 @@
+= The Rationale for Testing
+:published_at: 2011-05-17
+:hp-tags: Unit test, TDD, Mocking
