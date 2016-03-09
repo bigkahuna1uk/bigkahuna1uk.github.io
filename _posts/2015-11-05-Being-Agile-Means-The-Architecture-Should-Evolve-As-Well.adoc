@@ -1,0 +1,3 @@
+= Being Agile Means The Architecture Should Evolve As Well
+:published_at: 2015-11-05
+:hp-tags: Agile, Architecture, Refactoring
