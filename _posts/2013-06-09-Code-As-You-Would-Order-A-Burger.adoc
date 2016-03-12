@@ -77,5 +77,21 @@ The code for updating the message is pushed into its own class. As well as enfor
 ++++
 
 As a byproduct, the test for the converter becomes very simple. Beforehand we would have to test every permutation of concatenated parameters. Now because code has been pushed to their logical place the test boils down to just testing the following behaviour:
+
 * Message should be updated if message is part of a multipart message
 * Message should be untouched if message is just a single message
+
+++++
+<script src="https://gist.github.com/bigkahuna1uk/5744650.js"></script>
+++++
+
+The permutation for those 3 message parameters are pushed to where it should be namely the test for the MultipartMessageParameterFactory. Each test then tests what it should instead of testing the unit and all of its dependencies' behaviour at the same time resulting in a combinatorial explosion of test methods making the test unclear.
+
+====== Conclusion
+
+* We've now got a class which now asks other classes do work i.e. operation requests instead of asking for data and doing the work ourselves.
+* By following this approach the http://en.wikipedia.org/wiki/Single_responsibility_principle[single responsibility principle] naturally falls out. Each class performs a single well understood operation and only that operation. This makes those classes loosely coupled and become candidates for reuse in different contexts if needed.
+* Unit tests have become clearer and focused as they only testing a single object rather than a multitude. If you notice I've endeavoured to use constructor injection for any dependencies. This makes the testing of classes easier as I can mock out any external dependencies.
+
+
+TIP: I remember this paradigm by thinking what you would do if you ordered a burger in McDonalds. Would you ask the server for two sliced bun halves, some mayo, lettuce, a hamburger, cheese and tomato sauce or would you just ask for a Big Mac? :D
