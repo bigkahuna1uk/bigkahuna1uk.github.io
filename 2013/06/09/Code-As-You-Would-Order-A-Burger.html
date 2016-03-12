@@ -23,7 +23,7 @@
     <meta property="og:description" content="Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..." />
     <meta property="og:url" content="https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html" />
     <meta property="article:published_time" content="2013-06-08T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-03-12T07:59:13.439Z" />
+    <meta property="article:modified_time" content="2016-03-12T08:01:23.727Z" />
     <meta property="article:tag" content="OO" />
     <meta property="article:tag" content="Design" />
     <meta property="article:tag" content="GOOS" />
@@ -52,7 +52,7 @@
     "headline": "Code As You Would Order A Burger",
     "url": "https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html",
     "datePublished": "2013-06-08T23:00:00.000Z",
-    "dateModified": "2016-03-12T07:59:13.439Z",
+    "dateModified": "2016-03-12T08:01:23.727Z",
     "keywords": "OO,  Design,  GOOS,  Tell Don&amp;#39;t Ask,  Messaging,  Functional,  FP",
     "description": "Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..."
 }
@@ -78,7 +78,7 @@
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Recently during my work, I came across some code where the paradigm <strong>Tell Don&#8217;t Ask</strong> came into play. You sometimes see code written that&#8217;s not really using OO to its full strengths and still is of a procedural stance. There&#8217;s often frequent examples where an object asks other objects for data and then does something with it. This is not really OO even though you may still be using other aspects of OO such as enscapulation, inheritance or polymorphism. It&#8217;s still asking for data whereas the real value-add for OO is message passing or the behaviour of the objects rather than the data they may contain. I&#8217;ve come to understand this implicitly via the usage of mocks during testing. The use of mocks results in code that better follows the <strong>'Tell, Don&#8217;t Ask'</strong> paradigm.</p>
+<p>Recently during my work, I came across some code where the paradigm <strong>Tell Don&#8217;t Ask</strong> came into play. You sometimes see code written that&#8217;s not really using OO to its full strengths and still is of a procedural stance. There&#8217;s often frequent examples where an object asks other objects for data and then does something with it. This is not really OO even though you may still be using other aspects of OO such as enscapulation, inheritance or polymorphism. It&#8217;s still asking for data whereas the real value-add for OO is message passing or the behaviour of the objects rather than the data they may contain. I&#8217;ve come to understand this implicitly via the usage of mocks during testing. The use of mocks results in code that better follows the <strong>Tell, Don&#8217;t Ask</strong> paradigm.</p>
 </div>
 <div class="paragraph">
 <p>One of the originators of mock objects noted that:</p>
@@ -93,6 +93,9 @@
 &#8212; Tim Mickinnon<br>
 <cite>A Brief History Of Mock Objects</cite>
 </div>
+</div>
+<div class="paragraph">
+<p>+</p>
 </div>
 <div class="paragraph">
 <p>Once I came over this mental hurdle, I found I wasn&#8217;t primarily concerned with the data passed between the objects but really that the appropriate methods calls or methods (messages) between objects were observed. I used the <a href="https://code.google.com/p/mockito/">Mockito mocking library</a> and I find the most of my tests are interaction tests i.e. verifying that methods calls were made in the manner expected. State based testing is still important but at the right place. This got me thinking about objects in terms of <a href="http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented">Alan Kay&#8217;s emphasis on message passing</a> . The following examples illustrates why telling an object to do something rather than asking it for its data is better.</p>
