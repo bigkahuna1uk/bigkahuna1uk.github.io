@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Code As You Would Order A Burger</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//bigkahuna1uk.github.io/themes/Roon/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//bigkahuna1uk.github.io/themes/Roon/assets/css/screen.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html" />
+    
+    <meta property="og:site_name" content="EXAUDIO, COMPERIO, CONLOQUOR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Code As You Would Order A Burger" />
+    <meta property="og:description" content="Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..." />
+    <meta property="og:url" content="https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html" />
+    <meta property="article:published_time" content="2013-06-08T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-03-12T07:55:21.743Z" />
+    <meta property="article:tag" content="OO" />
+    <meta property="article:tag" content="Design" />
+    <meta property="article:tag" content="GOOS" />
+    <meta property="article:tag" content="Tell Don&amp;#39;t Ask" />
+    <meta property="article:tag" content="Messaging" />
+    <meta property="article:tag" content="Functional" />
+    <meta property="article:tag" content="FP" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Code As You Would Order A Burger" />
+    <meta name="twitter:description" content="Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..." />
+    <meta name="twitter:url" content="https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "EXAUDIO, COMPERIO, CONLOQUOR",
+    "author": {
+        "@type": "Person",
+        "name": null,
+        "image": "https://avatars.githubusercontent.com/u/1609101?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": null
+    },
+    "headline": "Code As You Would Order A Burger",
+    "url": "https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html",
+    "datePublished": "2013-06-08T23:00:00.000Z",
+    "dateModified": "2016-03-12T07:55:21.743Z",
+    "keywords": "OO,  Design,  GOOS,  Tell Don&amp;#39;t Ask,  Messaging,  Functional,  FP",
+    "description": "Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="EXAUDIO, COMPERIO, CONLOQUOR" href="https://bigkahuna1uk.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-O-O tag-Design tag-G-O-O-S tag-Tell-Dont-Ask tag-Messaging tag-Functional tag-F-P  noimage">
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://bigkahuna1uk.github.io" id="home_link">«</a>
+            <div class="meta"><time datetime="2013-06-09"><a href="/2013/06/09/Code-As-You-Would-Order-A-Burger.html">June 09, 2013</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Code As You Would Order A Burger</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Recently during my work, I came across some code where the paradigm <strong>Tell Don&#8217;t Ask</strong> came into play. You sometimes see code written that&#8217;s not really using OO to its full strengths and still is of a procedural stance. There&#8217;s often frequent examples where an object asks other objects for data and then does something with it. This is not really OO even though you may still be using other aspects of OO such as enscapulation, inheritance or polymorphism. It&#8217;s still asking for data whereas the real value-add for OO is message passing or the behaviour of the objects rather than the data they may contain. I&#8217;ve come to understand this implicitly via the usage of mocks during testing. The use of mocks results in code that better follows the <strong>'Tell, Don&#8217;t Ask'</strong> paradigm.</p>
+</div>
+<div class="paragraph">
+<p>One of the originators of mock objects noted that:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour, rather than state, which is one of the characteristics of Responsibility Driven Design.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Tim Mickinnon
+</div>
+</div>
+<div class="paragraph">
+<p>Once I came over this mental hurdle, I found I wasn&#8217;t primarily concerned with the data passed between the objects but really that the appropriate methods calls or methods (messages) between objects were observed. I used the <a href="https://code.google.com/p/mockito/">Mockito mocking library</a> and I find the most of my tests are interaction tests i.e. verifying that methods calls were made in the manner expected. State based testing is still important but at the right place. This got me thinking about objects in terms of <a href="http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented">Alan Kay&#8217;s emphasis on message passing</a> . The following examples illustrates why telling an object to do something rather than asking it for its data is better.</p>
+</div>
+<div class="paragraph">
+<p>I work a lot with enterprise integration and one of the examples that illustrates this point is message concatenation. During conversion from a internal message to one that that is supported by an external protocol, dependent on whether a message is concatenated or not, then the message may be decorated with extra parameters to indicate that it is a multipart message rather than a single message.</p>
+</div>
+<div class="paragraph">
+<p>In this example the extra metadata parameters that get added are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The message reference for the multipart message</p>
+</li>
+<li>
+<p>The part number of the message</p>
+</li>
+<li>
+<p>Total number of parts for the message</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_implementation_using_an_ask_approach">Implementation Using An Ask Approach</h6>
+<div class="paragraph">
+<p>A factory was used to create a map of parameters for message concatenation:</p>
+</div>
+<script src="https://gist.github.com/bigkahuna1uk/5744388.js"></script>
+<div class="paragraph">
+<p>The protocol converter that used this information was coded like this:</p>
+</div>
+<script src="https://gist.github.com/bigkahuna1uk/5744407.js"></script>
+<div class="paragraph">
+<p>This was bad for several reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The MultipartMessageParameterFactory returns an abstract datatype, in this case a map, so users of this class have to know what keys to pull out the data. If this approach really must be followed, a domain object to hold the multipart parameters would be better, maybe a simple POJO with accessors for the different parameters.</p>
+</li>
+<li>
+<p>The main problem with this approach is it results in <a href="http://c2.com/cgi/wiki?InappropriateIntimacy">Inappropriate Intimacy</a>. The user is asking for some data and then assembling that data thereafter. The lookup keys for the map are made  public presumably to mistakenly enforce DRY principles for magic strings within a unit test.</p>
+</li>
+<li>
+<p>This class could become better by passing in the parameter factory in the constructor so it can be mocked. In this way the unit test for this class will be simpler but it&#8217;s still complicated.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_implementation_using_a_tell_approach">Implementation Using A Tell Approach</h6>
+<div class="paragraph">
+<p>The <strong>Tell</strong> is all about telling an object to perform some piece of work on your behalf rather than asking that object for data and then doing the work yourself. In the previous example, the protocol converter asked another object for the message concatenation info and then added those parts itself to the message. In the following example, we ask another object to do this bit of work for us. Firstly we introduce a domain object to replace the map use for the multipart parameters:</p>
+</div>
+<script src="https://gist.github.com/bigkahuna1uk/5744734.js"></script>
+<div class="paragraph">
+<p>The factory now returns this POJO instead of the naked ADT:</p>
+</div>
+<script src="https://gist.github.com/bigkahuna1uk/5744751.js"></script>
+<div class="paragraph">
+<p>Now the converter asks another object, MultiPartMessageUpdater, to do the message updating:</p>
+</div>
+<script src="https://gist.github.com/bigkahuna1uk/5744436.js"></script>
+<div class="paragraph">
+<p>The code for updating the message is pushed into its own class. As well as enforcing the single responsibility principle, it also endorses the <a href="http://en.wikipedia.org/wiki/Command%E2%80%93query_separation">command and query separation principle</a> so that the retrieval of the actual parameters (query) is separated from the addition of the those parameters to the message itself (command).</p>
+</div>
+<script src="https://gist.github.com/bigkahuna1uk/5744526.js"></script>
+<div class="paragraph">
+<p>As a byproduct, the test for the converter becomes very simple. Beforehand we would have to test every permutation of concatenated parameters. Now because code has been pushed to their logical place the test boils down to just testing the following behaviour:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Message should be updated if message is part of a multipart message</p>
+</li>
+<li>
+<p>Message should be untouched if message is just a single message</p>
+</li>
+</ul>
+</div>
+<script src="https://gist.github.com/bigkahuna1uk/5744650.js"></script>
+<div class="paragraph">
+<p>The permutation for those 3 message parameters are pushed to where it should be namely the test for the MultipartMessageParameterFactory. Each test then tests what it should instead of testing the unit and all of its dependencies' behaviour at the same time resulting in a combinatorial explosion of test methods making the test unclear.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_conclusion">Conclusion</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>We&#8217;ve now got a class which now asks other classes do work i.e. operation requests instead of asking for data and doing the work ourselves.</p>
+</li>
+<li>
+<p>By following this approach the <a href="http://en.wikipedia.org/wiki/Single_responsibility_principle">single responsibility principle</a> naturally falls out. Each class performs a single well understood operation and only that operation. This makes those classes loosely coupled and become candidates for reuse in different contexts if needed.</p>
+</li>
+<li>
+<p>Unit tests have become clearer and focused as they only testing a single object rather than a multitude. If you notice I&#8217;ve endeavoured to use constructor injection for any dependencies. This makes the testing of classes easier as I can mock out any external dependencies.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+I remember this <strong>Tell Don&#8217;t Ask</strong> paradigm by thinking what you would do if you ordered a burger in McDonalds. Would you ask the server for two sliced bun halves, some mayo, lettuce, a hamburger, cheese and tomato sauce or would you just ask for a Big Mac? :D
+</td>
+</tr>
+</table>
+</div>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Code%20As%20You%20Would%20Order%20A%20Burger&url=https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <!-- <a href="https://bigkahuna1uk.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a> -->
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/1609101?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/1609101?v=3" alt="">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n"></a></h4>
+                    
+                    
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    <section class="post-comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      var disqus_shortname = 'bigkahuna1uk-github-io'; // required: replace example with your forum shortname
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html&amp;description=Code%20As%20You%20Would%20Order%20A%20Burger-EXAUDIO%2C%20COMPERIO%2C%20CONLOQUOR " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-74241702-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>
