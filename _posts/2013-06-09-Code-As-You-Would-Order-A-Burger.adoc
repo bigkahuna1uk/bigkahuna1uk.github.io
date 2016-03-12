@@ -7,7 +7,7 @@ Recently during my work, I came across some code where the paradigm **Tell Don't
 One of the originators of mock objects noted that:
 
 
-[quote, Tim Mickinnon]
+[quote, Tim Mickinnon, A Brief History Of Mock Objects]
 ____
 The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour, rather than state, which is one of the characteristics of Responsibility Driven Design.
 ____ 
