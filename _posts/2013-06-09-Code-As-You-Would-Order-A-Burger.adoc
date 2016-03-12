@@ -4,9 +4,18 @@
 
 Recently during my work, I came across some code where the paradigm **Tell Don't Ask** came into play. You sometimes see code written that's not really using OO to its full strengths and still is of a procedural stance. There's often frequent examples where an object asks other objects for data and then does something with it. This is not really OO even though you may still be using other aspects of OO such as enscapulation, inheritance or polymorphism. It's still asking for data whereas the real value-add for OO is message passing or the behaviour of the objects rather than the data they may contain. I've come to understand this implicitly via the usage of mocks during testing. The use of mocks results in code that better follows the **'Tell, Don't Ask'** paradigm.
 
-Tim Mickinnon, one of the originators of mock objects noted that:
+One of the originators of mock objects noted that:
 
-__The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour, rather than state, which is one of the characteristics of Responsibility- Driven Design.__
+
+[quote, Tim Mickinnon]
+____
+The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour, rather than state, which is one of the characteristics of Responsibility Driven Design.
+____ 
+ 
+
+ 
+ 
+
 
 Once I came over this mental hurdle, I found I wasn't primarily concerned with the data passed between the objects but really that the appropriate methods calls or methods (messages) between objects were observed. I used the https://code.google.com/p/mockito/[Mockito mocking library] and I find the most of my tests are interaction tests i.e. verifying that methods calls were made in the manner expected. State based testing is still important but at the right place. This got me thinking about objects in terms of http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented[Alan Kay's emphasis on message passing] . The following examples illustrates why telling an object to do something rather than asking it for its data is better. 
 
@@ -22,7 +31,9 @@ In this example the extra metadata parameters that get added are:
 
 A factory was used to create a map of parameters for message concatenation:
 
+++++
 <script src="https://gist.github.com/bigkahuna1uk/5744388.js"></script>
+++++
 
 
-
+The protocol conveter
