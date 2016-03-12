@@ -45,6 +45,37 @@ The protocol converter that used this information was coded like this:
 This was bad for several reasons:
 
 * The MultipartMessageParameterFactory returns an abstract datatype, in this case a map, so users of this class have to know what keys to pull out the data. If this approach really must be followed, a domain object to hold the multipart parameters would be better, maybe a simple POJO with accessors for the different parameters.
-* The main problem with this approach is it results in Inappropriate Intimacy. The user is asking for some data and then assembling that data thereafter. The lookup keys for the map are made  public presumably to mistakenly enforce DRY principles for magic strings within a unit test. 
+* The main problem with this approach is it results in http://c2.com/cgi/wiki?InappropriateIntimacy[Inappropriate Intimacy]. The user is asking for some data and then assembling that data thereafter. The lookup keys for the map are made  public presumably to mistakenly enforce DRY principles for magic strings within a unit test. 
 * This class could become better by passing in the parameter factory in the constructor so it can be mocked. In this way the unit test for this class will be simpler but it's still complicated.  
 
+
+
+====== Implementation Using A Tell Approach
+
+The **Tell** is all about telling an object to perform some piece of work on your behalf rather than asking that object for data and then doing the work yourself. In the previous example, the protocol converter asked another object for the message concatenation info and then added those parts itself to the message. In the following example, we ask another object to do this bit of work for us. Firstly we introduce a domain object to replace the map use for the multipart parameters:
+
+++++ 
+<script src="https://gist.github.com/bigkahuna1uk/5744734.js"></script> 
+++++
+
+The factory now returns this POJO instead of the naked ADT:
+
+++++
+<script src="https://gist.github.com/bigkahuna1uk/5744751.js"></script>
+++++
+
+Now the converter asks another object, MultiPartMessageUpdater, to do the message updating:
+
+++++
+<script src="https://gist.github.com/bigkahuna1uk/5744436.js"></script>
+++++
+
+The code for updating the message is pushed into its own class. As well as enforcing the single responsibility principle, it also endorses the http://en.wikipedia.org/wiki/Command%E2%80%93query_separation[command and query separation principle] so that the retrieval of the actual parameters (query) is separated from the addition of the those parameters to the message itself (command).
+
+++++
+<script src="https://gist.github.com/bigkahuna1uk/5744526.js"></script>
+++++
+
+As a byproduct, the test for the converter becomes very simple. Beforehand we would have to test every permutation of concatenated parameters. Now because code has been pushed to their logical place the test boils down to just testing the following behaviour:
+* Message should be updated if message is part of a multipart message
+* Message should be untouched if message is just a single message
