@@ -94,4 +94,4 @@ The permutation for those 3 message parameters are pushed to where it should be 
 * Unit tests have become clearer and focused as they only testing a single object rather than a multitude. If you notice I've endeavoured to use constructor injection for any dependencies. This makes the testing of classes easier as I can mock out any external dependencies.
 
 
-TIP: I remember this paradigm by thinking what you would do if you ordered a burger in McDonalds. Would you ask the server for two sliced bun halves, some mayo, lettuce, a hamburger, cheese and tomato sauce or would you just ask for a Big Mac? :D
+TIP: I remember this **Tell Don't Ask** paradigm by thinking what you would do if you ordered a burger in McDonalds. Would you ask the server for two sliced bun halves, some mayo, lettuce, a hamburger, cheese and tomato sauce or would you just ask for a Big Mac? :D
