@@ -36,4 +36,15 @@ A factory was used to create a map of parameters for message concatenation:
 ++++
 
 
-The protocol conveter
+The protocol converter that used this information was coded like this:
+
+++++
+<script src="https://gist.github.com/bigkahuna1uk/5744407.js"></script>
+++++
+
+This was bad for several reasons:
+
+* The MultipartMessageParameterFactory returns an abstract datatype, in this case a map, so users of this class have to know what keys to pull out the data. If this approach really must be followed, a domain object to hold the multipart parameters would be better, maybe a simple POJO with accessors for the different parameters.
+* The main problem with this approach is it results in Inappropriate Intimacy. The user is asking for some data and then assembling that data thereafter. The lookup keys for the map are made  public presumably to mistakenly enforce DRY principles for magic strings within a unit test. 
+* This class could become better by passing in the parameter factory in the constructor so it can be mocked. In this way the unit test for this class will be simpler but it's still complicated.  
+
