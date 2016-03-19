@@ -29,7 +29,7 @@ image::cucumber-school/3-vlcsnap-exanmple-mapping.png[]
 
 I like that a holistic view of development was portrayed in the sense that BDD and TDD were not considered disparate, but practices to be followed at different levels of granularity. A great phrase that resonated with me was that BDD enforced outside-in development.
 
-===== BDD ensures you're building the right thing, but TDD ensures you're building the thing right. 
+==== BDD ensures you're building the right thing, but TDD ensures you're building the thing right. 
 
 image::cucumber-school/4-bdd-outside-in.png[]
 
@@ -53,7 +53,6 @@ As I proceeded through the lessons, any questions I had on BDD on testing or the
 
 A lot of people still think BDD is a tool and is only about testing. For a long time, I was one of those people too. I believe BDD is still poorly understood and frequently misappropriated. But following the Cucumber School lessons, I think a lot of the misnomers of BDD will be eradicated. At the end of the course I feel I've gained several approaches to finding solutions to problems in new ways.
 
-===== Conclusion
 
 So in conclusion,
 
