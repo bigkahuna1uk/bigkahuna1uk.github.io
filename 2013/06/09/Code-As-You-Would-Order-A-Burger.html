@@ -35,7 +35,7 @@
     <meta property="og:description" content="Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..." />
     <meta property="og:url" content="https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html" />
     <meta property="article:published_time" content="2013-06-08T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-03-19T20:24:23.575Z" />
+    <meta property="article:modified_time" content="2016-03-19T20:28:46.853Z" />
     <meta property="article:tag" content="OO" />
     <meta property="article:tag" content="Design" />
     <meta property="article:tag" content="GOOS" />
@@ -64,7 +64,7 @@
     "headline": "Code As You Would Order A Burger",
     "url": "https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html",
     "datePublished": "2013-06-08T23:00:00.000Z",
-    "dateModified": "2016-03-19T20:24:23.575Z",
+    "dateModified": "2016-03-19T20:28:46.853Z",
     "keywords": "OO,  Design,  GOOS,  Tell Don&amp;#39;t Ask,  Messaging,  Functional,  FP",
     "description": "Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..."
 }
@@ -189,7 +189,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Once I came over this mental hurdle, I found I wasn&#8217;t primarily concerned with the data passed between the objects but really that the appropriate methods calls or methods (messages) between objects were observed. I used the <a href="https://code.google.com/p/mockito/">Mockito mocking library</a> and I find the most of my tests are interaction tests i.e. verifying that methods calls were made in the manner expected. State based testing is still important but at the right place. This got me thinking about objects in terms of <a href="http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented">Alan Kay&#8217;s emphasis on message passing</a> . The following examples illustrates why telling an object to do something rather than asking it for its data is better.</p>
+<p>Once I came over this mental hurdle, I found I wasn&#8217;t primarily concerned with the data passed between the objects but really that the appropriate methods calls (messages) between objects were observed. I used the <a href="https://code.google.com/p/mockito/">Mockito mocking library</a> and I find the most of my tests are interaction tests i.e. verifying that methods calls were made in the manner expected. State based testing is still important but at the right place. This got me thinking about objects in terms of <a href="http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented">Alan Kay&#8217;s emphasis on message passing</a> . The following examples illustrates why telling an object to do something rather than asking it for its data is better.</p>
 </div>
 <div class="paragraph">
 <p>I work a lot with enterprise integration and one of the examples that illustrates this point is message concatenation. During conversion from a
