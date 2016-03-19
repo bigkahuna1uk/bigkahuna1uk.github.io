@@ -10,9 +10,7 @@ One of the https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad
 
 
 [quote, Tim Mickinnon, from Mock Roles Not Objects (2004)] 
-
-__The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour, rather than state, which is one of the characteristics of Responsibility Driven Design.__  
- 
+__The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour rather than state, which is one of the characteristics of Responsibility Driven Design.__
  
 
 
@@ -27,7 +25,9 @@ In this example the extra metadata parameters that get added are:
 * The part number of the message
 * Total number of parts for the message
 
-====== Implementation Using An Ask Approach
+
+===== Implementation Using An Ask Approach
+
 
 A factory was used to create a map of parameters for message concatenation:
 
@@ -50,7 +50,7 @@ This was bad for several reasons:
 
 
 
-====== Implementation Using A Tell Approach
+===== Implementation Using A Tell Approach
 
 The **Tell** is all about telling an object to perform some piece of work on your behalf rather than asking that object for data and then doing the work yourself. In the previous example, the protocol converter asked another object for the message concatenation info and then added those parts itself to the message. In the following example, we ask another object to do this bit of work for us. Firstly we introduce a domain object to replace the map use for the multipart parameters:
 
