@@ -9,11 +9,11 @@ Recently during my work, I came across some code where the paradigm **Tell Don't
 One of the https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&sqi=2&ved=0ahUKEwjT88Td2LrLAhWpYZoKHc5NAc4QFggcMAA&url=http%3A%2F%2Fwww.jmock.org%2Foopsla2004.pdf&usg=AFQjCNENaDN5svyWdTJGZIUagSJfL0Czbw&sig2=sSVezUvqTVrOHXGuux29hg&bvm=bv.116636494,d.bGs[originators of mock objects] noted that:
 
 
-[quote, Tim Mickinnon, from Mock Roles Not Objects (2004)] 
+[quote, Tim Mickinnon, Mock Roles Not Objects (2004)] 
 __The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour rather than state, which is one of the characteristics of Responsibility Driven Design.__
  
-
-
+ 
+ 
 Once I came over this mental hurdle, I found I wasn't primarily concerned with the data passed between the objects but really that the appropriate methods calls or methods (messages) between objects were observed. I used the https://code.google.com/p/mockito/[Mockito mocking library] and I find the most of my tests are interaction tests i.e. verifying that methods calls were made in the manner expected. State based testing is still important but at the right place. This got me thinking about objects in terms of http://c2.com/cgi/wiki?AlanKaysDefinitionOfObjectOriented[Alan Kay's emphasis on message passing] . The following examples illustrates why telling an object to do something rather than asking it for its data is better. 
 
 I work a lot with enterprise integration and one of the examples that illustrates this point is message concatenation. During conversion from a 
@@ -94,4 +94,4 @@ The permutation for those 3 message parameters are pushed to where it should be 
 * Unit tests have become clearer and focused as they only testing a single object rather than a multitude. If you notice I've endeavoured to use constructor injection for any dependencies. This makes the testing of classes easier as I can mock out any external dependencies.
 
 
-TIP: I remember this **Tell Don't Ask** paradigm by thinking what you would do if you ordered a burger in McDonalds. Would you ask the server for two sliced bun halves, some mayo, lettuce, a hamburger, cheese and tomato sauce or would you just ask for a Big Mac? :D
+I remember this **Tell Don't Ask** paradigm by thinking what you would do if you ordered a burger in McDonalds. Would you ask the server for two sliced bun halves, some mayo, lettuce, a hamburger, cheese and tomato sauce or would you just ask for a Big Mac? :D
