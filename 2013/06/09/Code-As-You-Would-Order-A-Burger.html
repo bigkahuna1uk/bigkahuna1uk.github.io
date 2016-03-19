@@ -35,7 +35,7 @@
     <meta property="og:description" content="Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..." />
     <meta property="og:url" content="https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html" />
     <meta property="article:published_time" content="2013-06-08T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-03-19T20:06:38.429Z" />
+    <meta property="article:modified_time" content="2016-03-19T20:18:20.668Z" />
     <meta property="article:tag" content="OO" />
     <meta property="article:tag" content="Design" />
     <meta property="article:tag" content="GOOS" />
@@ -64,7 +64,7 @@
     "headline": "Code As You Would Order A Burger",
     "url": "https://bigkahuna1uk.github.io/2013/06/09/Code-As-You-Would-Order-A-Burger.html",
     "datePublished": "2013-06-08T23:00:00.000Z",
-    "dateModified": "2016-03-19T20:06:38.429Z",
+    "dateModified": "2016-03-19T20:18:20.668Z",
     "keywords": "OO,  Design,  GOOS,  Tell Don&amp;#39;t Ask,  Messaging,  Functional,  FP",
     "description": "Recently during my work, I came across some code where the paradigm Tell Don&amp;#8217;t Ask came into play. You sometimes see code written that&amp;#8217;s not really using OO to its full strengths and still is of..."
 }
@@ -181,7 +181,7 @@
 </div>
 <div class="quoteblock">
 <blockquote>
-<em>The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour, rather than state, which is one of the characteristics of Responsibility Driven Design.</em>
+<em>The trigger for our original discovery of the technique was when John Nolan set the challenge of writing code without getters. Getters expose implementation, which increases coupling between objects and allows responsibilities to be left in the wrong module. Avoiding getters forces an emphasis on object behaviour rather than state, which is one of the characteristics of Responsibility Driven Design.</em>
 </blockquote>
 <div class="attribution">
 &#8212; Tim Mickinnon<br>
@@ -213,8 +213,8 @@ internal message to one that that is supported by an external protocol, dependen
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_implementation_using_an_ask_approach">Implementation Using An Ask Approach</h6>
+<div class="sect4">
+<h5 id="_implementation_using_an_ask_approach">Implementation Using An Ask Approach</h5>
 <div class="paragraph">
 <p>A factory was used to create a map of parameters for message concatenation:</p>
 </div>
@@ -240,8 +240,8 @@ internal message to one that that is supported by an external protocol, dependen
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_implementation_using_a_tell_approach">Implementation Using A Tell Approach</h6>
+<div class="sect4">
+<h5 id="_implementation_using_a_tell_approach">Implementation Using A Tell Approach</h5>
 <div class="paragraph">
 <p>The <strong>Tell</strong> is all about telling an object to perform some piece of work on your behalf rather than asking that object for data and then doing the work yourself. In the previous example, the protocol converter asked another object for the message concatenation info and then added those parts itself to the message. In the following example, we ask another object to do this bit of work for us. Firstly we introduce a domain object to replace the map use for the multipart parameters:</p>
 </div>
@@ -275,7 +275,6 @@ internal message to one that that is supported by an external protocol, dependen
 <div class="paragraph">
 <p>The permutation for those 3 message parameters are pushed to where it should be namely the test for the MultipartMessageParameterFactory. Each test then tests what it should instead of testing the unit and all of its dependencies' behaviour at the same time resulting in a combinatorial explosion of test methods making the test unclear.</p>
 </div>
-</div>
 <div class="sect5">
 <h6 id="_conclusion">Conclusion</h6>
 <div class="ulist">
@@ -302,6 +301,7 @@ I remember this <strong>Tell Don&#8217;t Ask</strong> paradigm by thinking what 
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
     </section>
