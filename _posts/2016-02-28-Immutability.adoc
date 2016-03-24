@@ -1,3 +1,57 @@
 = Immutability 
 :published_at: 2016-02-28
 :hp-tags: Functional Programming, Immutability, Fluent APIs, Builders, Aneamic objects, Factories, Guava, Functions
+
+
+Complex anaemic object
+
+Long constructor
+
+Construct objects with long constructor or setters which are error prone.  How do I know object is actually fit for purpose. 
+
+
+TODO: Long constructor example
+
+TODO: Setter example
+
+Mutable objects are inherently not thread safe
+
+
+An immutabe object is one that cannot be modified after its creation. ted. 
+
+
+The advantages of immutable obejects are:
+
+* You can think of them as values. A value cannot be changed.  If a new value is required, a new object representing the new value needs to be construct
+
+
+* They are inherently thread-safe. They allow safe access concurrently.
+* Code based on immutable objects are easier to reason about and have a higher probability of consistent, well understood behaviour. Unexpected changes cannot occur.
+
+
+
+
+
+=== How we enforce immutability
+
+
+TODO: 
+
+* Objects with a well defined constructor
+* No mutator methods on object only accessor. 
+
+
+TODO: COde example
+
+
+
+
+
+
+
+
+==== We have Immutable Objects But What About Collections?
+
+Now we have a dilemma.  
+
+You may have a collection w
