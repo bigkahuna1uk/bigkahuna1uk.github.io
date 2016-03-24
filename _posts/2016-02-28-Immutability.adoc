@@ -76,7 +76,7 @@ Fortunately there's now a library that can solve thse so
 
 
 
-[source,java]
+[source,ruby]
 ----
 require 'asciidoctor'  # <1>
 
