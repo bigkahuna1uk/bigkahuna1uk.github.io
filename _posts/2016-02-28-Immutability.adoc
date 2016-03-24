@@ -17,15 +17,13 @@ TODO: Setter example
 Mutable objects are inherently not thread safe
 
 
-An immutabe object is one that cannot be modified after its creation. ted. 
+An immutable object is one that cannot be modified after its creation. 
 
 
 The advantages of immutable obejects are:
 
-* You can think of them as values. A value cannot be changed.  If a new value is required, a new object representing the new value needs to be construct
-
-
-* They are inherently thread-safe. They allow safe access concurrently.
+* You can think of them as values. A value cannot be changed. If a new value is required, a new object representing the new value needs to be construct
+* They are inherently thread-safe. They allow safe concurrent access.
 * Code based on immutable objects are easier to reason about and have a higher probability of consistent, well understood behaviour. Unexpected changes cannot occur.
 
 
@@ -42,8 +40,6 @@ TODO:
 
 
 TODO: COde example
-
-
 
 
 
