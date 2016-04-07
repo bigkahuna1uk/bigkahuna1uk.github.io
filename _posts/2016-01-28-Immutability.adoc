@@ -3,7 +3,19 @@
 :hp-tags: Functional Programming, Immutability, Fluent APIs, Builders, Aneamic objects, Factories, Guava, Functions
 
 
+
+
+
+
+
+
+
+
 Complex anaemic object
+
+
+
+
 
 Long constructor
 
@@ -22,7 +34,7 @@ An immutable object is one that cannot be modified after its creation.
 
 The advantages of immutable obejects are:
 
-* You can think of them as values. A value cannot be changed. If a new value is required, a new object representing the new value needs to be construct
+* You can think of them as values. A value cannot be changed. If a new value is required, a new object representing the new value needs to be constructed.
 * They are inherently thread-safe. They allow safe concurrent access.
 * Code based on immutable objects are easier to reason about and have a higher probability of consistent, well understood behaviour. Unexpected changes cannot occur.
 
@@ -41,9 +53,114 @@ TODO:
 
 TODO: COde example
 
+[source, java]
+----
+public interface Order {
+
+    public LocalDateTime at();
+
+    public Side getSide();
+
+    public int getQuantity();
+
+    public BigDecimal getPrice();
+}
+----
+
+Now let's have a mutable order based on that interface
+[source, java]
+----
+
+public class MutableOrder implements Order {
+
+    private LocalDateTime at;
+    private Side side;
+    private BigDecimal price;
+    private int quantity;
+
+    public void setAt(LocalDateTime at) {
+        this.at = at;
+    }
+
+    public void setSide(Side side) {
+        this.side = side;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @Override
+    public int getQuantity() {
+        return quantity;
+    }
+
+    @Override
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    @Override
+    public LocalDateTime at() {
+        return at;
+    }
+
+    @Override
+    public Side getSide() {
+        return side;
+    }
+}
+
+----
 
 
 
+To correct those issues, we can have an immutable object for an order
+
+[source,java]
+----
+public class ImmutableOrder implements Order {
+
+    private final BigDecimal price;
+    private final int quantity;
+    private final Side side;
+    private final LocalDateTime at;
+
+    public ImmutableOrder(BigDecimal price, int quantity, Side side, LocalDateTime at) {
+        this.price = price;
+        this.quantity = quantity;
+        this.side = side;
+        this.at = at;
+    }
+    
+    @Override
+    public LocalDateTime at() {
+        return null;
+    }
+
+    @Override
+    public Side getSide() {
+        return null;
+    }
+    
+    @Override
+    public int getQuantity() {
+        return 0;
+    }
+
+    @Override
+    public BigDecimal getPrice() {
+        return null;
+    }
+}
+----
+
+
+This example is trivial in that the number of f
 
 
 ==== We have Immutable Objects But What About Collections?
@@ -63,8 +180,14 @@ Another example is having an object with a collection. Ostensibly the object loo
 Fortunately there's now a library that can solve thse so
 
 
-
-
+[source, xml]
+----
+<dependency>
+	<groupId>org.immutables</groupId>
+	<artifactId>value</artifactId>
+	<version>2.1.4</version>
+</dependency>
+----
 
 
 
